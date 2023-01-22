@@ -87,11 +87,11 @@ nav {
 }
 
 nav > section:nth-child(1) {
-  height: 40%;
+  height: 30%;
 }
 
 nav > section:nth-child(2) {
-  flex: 1;
+  height: 70%;
 }
 
 nav > section {
@@ -163,6 +163,53 @@ main > div {
 
 button#create-document-overlay-create-button {
   margin-top: 10px;
+}
+
+button#create-document-button {
+  height: 1.5em;
+  padding: 0px 15px;
+}
+
+#documents-container {
+  overflow: scroll;
+}
+
+#users-container {
+  overflow: auto;
+}
+
+#editor-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#editor-container > header {
+  background-color: var(--bc-3);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+
+#editor-container > header > span {
+  display: block;
+}
+
+#editor-container > header > span#editor-document-name {
+  font-size: 1.5em;
+  font-style: italic;
+}
+
+#editor-container > header > span:nth-child(2) {
+  flex: 1;
+  border-bottom: 2px solid var(--hc-1);
+}
+
+#editor-container > header > button {
+  height: 1.5em;
+  padding: 0px 15px;
 }
 
 #editor {

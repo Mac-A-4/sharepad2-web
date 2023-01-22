@@ -40,6 +40,10 @@ function editorReset() {
   }
   $('#editor').val('')
   $('#editor').prop('readonly', true)
+  $('#editor-document-name').text('None')
+  $('#editor-rename-button').prop('disabled', true)
+  $('#editor-transfer-button').prop('disabled', true)
+  $('#editor-delete-button').prop('disabled', true)
 }
 
 function editorBeginReadingInterval(documentId: string) {
@@ -75,6 +79,7 @@ function editorBeginReading(documentId: string) {
     documentId
   }).then(response => {
     $('#editor').val(response.documentData)
+    editorSetName(documentId)
     editorBeginReadingInterval(documentId)
   }).catch(error => {
     console.log('Error in ReadDocument: ' + error)
@@ -118,10 +123,28 @@ function editorBeginUpdating(documentId: string) {
   }).then(response => {
     $('#editor').val(response.documentData)
     $('#editor').prop('readonly', false)
+    $('#editor-rename-button').prop('disabled', false)
+    $('#editor-transfer-button').prop('disabled', false)
+    $('#editor-delete-button').prop('disabled', false)
+    editorSetName(documentId)
     editorBeginUpdatingInterval(documentId)
   }).catch(error => {
     console.log('Error in ReadDocument: ' + error)
   })
+}
+
+function editorSetName(documentId: string) {
+  let document = documentArray.find(e => e.documentId === documentId)
+  if (document === undefined) {
+    alert('Invalid document id')
+    return
+  }
+  let user = userArray.find(e => e.userId === document?.documentUserId)
+  if (user === undefined) {
+    alert('Invalid document user id')
+    return
+  }
+  $('#editor-document-name').text(`${document.documentName} (${user.userName})`)
 }
 
 function editorBegin(documentId: string) {
@@ -166,7 +189,7 @@ function createDocument(documentName: string) {
     userId: userIdStorageVar.get()!,
     userToken: userTokenStorageVar.get()!,
     documentName,
-    documentData: 'test'
+    documentData: ''
   }).then(_ => {
     $('#create-document-overlay-create-button').prop('disabled', false)
     $('#create-document-overlay').hide()

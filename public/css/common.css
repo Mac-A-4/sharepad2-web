@@ -30,7 +30,6 @@ button {
   border: none;
   background-color: var(--hc-1);
   color: var(--tc-1);
-  font-size: 1em;
 }
 
 button:hover {
