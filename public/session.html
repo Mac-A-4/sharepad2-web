@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SharePad 2</title>
+    <script src="js/session.js" defer></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/session.css">
+    <link rel="stylesheet" href="css/overlay.css">
+  </head>
+  <body>
+    <div
+      id="session-overlay"
+      class="overlay"
+      style="display: none;">
+      <section>
+        <header>
+          Session
+        </header>
+        <div class="input-text">
+          <span>
+            Session ID
+          </span>
+          <input
+            readonly
+            id="session-overlay-session-id-input"
+            type="text">
+        </div>
+        <div class="input-text">
+          <span>
+            Share URL
+          </span>
+          <input
+            readonly
+            id="session-overlay-share-url-input"
+            type="text">
+        </div>
+        <div class="input-text">
+          <span>
+            Name
+          </span>
+          <input
+            readonly
+            id="session-overlay-username-input"
+            type="text">
+        </div>
+        <div class="input-text">
+          <span>
+            User ID
+          </span>
+          <input
+            readonly
+            id="session-overlay-user-id-input"
+            type="text">
+        </div>
+        <div class="input-text">
+          <span>
+            User Token
+          </span>
+          <input
+            readonly
+            id="session-overlay-user-token-input"
+            type="text">
+        </div>
+        <button id="session-overlay-close-button">
+          Close
+        </button>
+      </section>
+    </div>
+    <div
+      id="create-document-overlay"
+      class="overlay"
+      style="display: none;">
+      <section>
+        <header>
+          New Document
+        </header>
+        <div class="input-text">
+          <span>
+            Name
+          </span>
+          <input
+            id="create-document-overlay-name-input"
+            type="text">
+        </div>
+        <button id="create-document-overlay-create-button">
+          Create
+        </button>
+      </section>
+    </div>
+    <header>
+      <div>
+        <span>
+          SharePad
+        </span>
+        <span>
+          2
+        </span>
+      </div>
+      <button id="session-button">
+        Session
+      </button>
+      <button id="leave-button">
+        Leave
+      </button>
+    </header>
+    <main>
+      <nav>
+        <section>
+          <header>
+            <span>
+              Users
+            </span>
+            <span>
+            </span>
+          </header>
+          <div id="users-container">
+          </div>
+        </section>
+        <section>
+          <header>
+            <span>
+              Documents
+            </span>
+            <span>
+            </span>
+            <button id="create-document-button">
+              New
+            </button>
+          </header>
+          <div id="documents-container">
+          </div>
+        </section>
+      </nav>
+      <textarea
+        id="editor"
+        spellcheck="false">
+      </textarea>
+    </main>
+  </body>
+</html>

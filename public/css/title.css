@@ -1,0 +1,88 @@
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+body > header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+body > header > span:nth-child(1) {
+  display: block;
+  font-size: 4em;
+}
+
+body > header > span:nth-child(2) {
+  display: block;
+  font-size: 3em;
+  color: var(--hc-1);
+  font-weight: bold;
+}
+
+@media screen and (min-width: 700px) {
+
+  body > main {
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--bc-2);
+  }
+  
+  body > main > section {
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  body > main > section:not(:last-child) {
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px dashed var(--tc-1);
+  }
+
+}
+
+@media screen and (max-width: 699px) {
+
+  body > main {
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bc-2);
+  }
+  
+  body > main > section {
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  body > main > section:not(:last-child) {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--tc-1);
+  }
+
+}
+
+body > main > section > header {
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+body > main > section > form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

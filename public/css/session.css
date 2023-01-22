@@ -1,0 +1,177 @@
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+body > header {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--bc-2);
+  gap: 20px;
+}
+
+body > header > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+body > header > div > span:nth-child(1) {
+  font-size: 2em;
+}
+
+body > header > div > span:nth-child(2) {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--hc-1);
+}
+
+body > header > button {
+  width: 100px;
+}
+
+body > header > button#leave-button {
+  margin-left: auto;
+  background-color: var(--hc-2);
+}
+
+@media screen and (max-width: 420px) {
+
+  body > header > div > span:nth-child(1) {
+    font-size: 1.5em;
+  }
+  
+  body > header > div > span:nth-child(2) {
+    font-size: 1.125em;
+    font-weight: bold;
+    color: var(--hc-1);
+  }
+
+  body > header > button {
+    width: auto;
+  }
+
+  body > header {
+    gap: 10px;
+  }
+
+  body > header > button#session-button {
+    margin-left: auto;
+  }
+
+  body > header > button#leave-button {
+    margin-left: 0;
+  }
+  
+}
+
+button#session-overlay-close-button {
+  margin-top: 10px;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+nav {
+  background-color: var(--bc-3);
+  width: 50%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+nav > section:nth-child(1) {
+  height: 40%;
+}
+
+nav > section:nth-child(2) {
+  flex: 1;
+}
+
+nav > section {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+nav > section > header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+nav > section > header > span {
+  font-size: 1.5em;
+  display: block;
+}
+
+nav > section > header > span:nth-child(2) {
+  flex: 1;
+  margin-left: 10px;
+  border-bottom: 2px solid var(--hc-1);
+}
+
+nav > section:nth-child(2) > header > span:nth-child(2) {
+  margin-right: 10px;
+}
+
+nav > section > div {
+  flex: 1;
+  padding: 10px;
+  padding-right: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main > div {
+  flex: 1;
+}
+
+.entry {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.entry > span {
+  display: block;
+  font-size: 1em;
+}
+
+.entry > span:nth-child(1) {
+  font-style: italic;
+}
+
+.entry > span:nth-child(2) {
+  margin-left: auto;
+}
+
+.entry:hover {
+  background-color: var(--bc-2);
+  cursor: pointer;
+}
+
+.entry.selected {
+  background-color: var(--bc-2);
+}
+
+button#create-document-overlay-create-button {
+  margin-top: 10px;
+}
+
+#editor {
+  flex: 1;
+  background-color: var(--bc-1);
+  color: var(--tc-1);
+  overflow: auto;
+  outline: none;
+  border: none;
+  padding: 10px;
+  font-size: 0.75em;
+}
